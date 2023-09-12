@@ -3,13 +3,13 @@ This app allows you to generate random files, of random sizes.
 ## Usage
 ### Windows
 ```
-rfg.exe -s 512 -o randomFile.ext
-rfg.exe --size 2048 --out randomFile2.ext
+> rfg.exe -s 512 -o randomFile.ext
+> rfg.exe --size 2048 --out randomFile2.ext
 ```
 ### Linux
 ```
-./rfg -s 512 -o randomFile.ext
-./rfg --size 2048 --out randomFile2.ext
+$ ./rfg -s 512 -o randomFile.ext
+$ ./rfg --size 2048 --out randomFile2.ext
 ```
 ## Download
 - [Windows(x64)](https://github.com/korayustundag/RandomFileGenerator/releases)
@@ -24,13 +24,13 @@ rfg.exe --size 2048 --out randomFile2.ext
 ### Build (Linux)
 ```bash
 #Debug
-make
+$ make
 
 #Release
-make release
+$ make release
 
 #Pack
-make pack
+$ make pack
 ```
 ## License
 Random File Generator is licensed under the GPLv3 License. See the [LICENSE](https://github.com/korayustundag/RandomFileGenerator/blob/main/LICENSE) file for details.
