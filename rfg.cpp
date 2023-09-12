@@ -23,7 +23,8 @@ int EXIT_BAD_ARG()
     return 160; // Windows: ERROR_BAD_ARGUMENTS - One or more arguments are not correct.
 }
 
-void printHelp() {
+void printHelp() 
+{
     std::cout << "Usage: rfg [OPTIONS]" << std::endl;
     std::cout << "Options:" << std::endl;
     std::cout << "  -s, --size SIZE   Set the size of the generated file in bytes" << std::endl;
@@ -105,43 +106,53 @@ int main(int argc, char* argv[])
     long long fileSize = -1;
 
     for (int i = 1; i < argc; ++i) {
-        if (std::string(argv[i]) == "-s" || std::string(argv[i]) == "--size") {
-            if (i + 1 < argc) {
+        if (std::string(argv[i]) == "-s" || std::string(argv[i]) == "--size") 
+        {
+            if (i + 1 < argc) 
+            {
                 fileSize = std::atoll(argv[i + 1]);
                 ++i;
             }
-            else {
+            else 
+            {
                 printHelp();
                 return EXIT_BAD_ARG();
             }
         }
-        else if (std::string(argv[i]) == "-o" || std::string(argv[i]) == "--out") {
-            if (i + 1 < argc) {
+        else if (std::string(argv[i]) == "-o" || std::string(argv[i]) == "--out") 
+        {
+            if (i + 1 < argc) 
+            {
                 outputPath = argv[i + 1];
                 ++i;
             }
-            else {
+            else 
+            {
                 printHelp();
                 return EXIT_BAD_ARG();
             }
         }
-        else if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help") {
+        else if (std::string(argv[i]) == "-h" || std::string(argv[i]) == "--help") 
+        {
             // Print help and exit
             printHelp();
             return 0;
         }
-        else if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "--version") {
+        else if (std::string(argv[i]) == "-v" || std::string(argv[i]) == "--version") 
+        {
             // Print version and exit
             std::cout << "Random File Generator version 1.0.0" << std::endl;
             return 0;
         }
-        else if (std::string(argv[i]) == "-l" || std::string(argv[i]) == "--license") {
+        else if (std::string(argv[i]) == "-l" || std::string(argv[i]) == "--license") 
+        {
             // Print license information and exit
             std::cout << "Random File Generator is licensed under the GPLv3 license.\n" << std::endl;
             printLicense();
             return 0;
         }
-        else {
+        else 
+        {
             std::cerr << COLOR_RED << "Error: Unknown option '" << argv[i] << "'" << COLOR_RESET << std::endl;
             printHelp();
             return EXIT_BAD_ARG();
@@ -149,7 +160,8 @@ int main(int argc, char* argv[])
     }
 
     // Check for missing arguments
-    if (fileSize == -1 || outputPath.empty()) {
+    if (fileSize == -1 || outputPath.empty()) 
+    {
         printHelp();
         return EXIT_BAD_ARG();
     }
